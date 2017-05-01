@@ -27,7 +27,12 @@ class CustomHeaderTableViewTableViewController: UITableViewController {
         
        // refreshViewObj.backgroundColor = UIColor.yellow
         
+        refreshViewObj.tintColor = UIColor.yellow
         self.tableView.addSubview(refreshViewObj)
+        
+        
+    //    refreshViewObj.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
+    
         
     }
     
@@ -45,6 +50,12 @@ class CustomHeaderTableViewTableViewController: UITableViewController {
         self.refreshViewObj.addSubview(customView)
         
        // self.tableView.refreshControl?.addSubview(customView)
+    }
+    
+    
+    func refreshData()  {
+        //
+        refreshViewObj.endRefreshing()
     }
 
     override func didReceiveMemoryWarning() {
